@@ -16,7 +16,11 @@ import java.util.List;
     private static Mapper mapper;
 
     private BeanMapper() {
+        List<String> mappingFiles = new ArrayList();
+        mappingFiles.add(BeanMapper.class.getClassLoader().getResource("dozerJdk8Converters.xml").toString());
+
         mapper = new DozerBeanMapper();
+        mapper.setMappingFiles(mappingFiles);
     }
 
     public static synchronized BeanMapper getInstance() {

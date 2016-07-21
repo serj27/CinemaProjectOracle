@@ -87,15 +87,49 @@ public class MovieDTO extends Entity<Integer> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MovieDTO)) return false;
+        if (!super.equals(o)) return false;
+
+        MovieDTO movieDTO = (MovieDTO) o;
+
+        if (getDuration() != movieDTO.getDuration()) return false;
+        if (getRating() != movieDTO.getRating()) return false;
+        if (getTitle() != null ? !getTitle().equals(movieDTO.getTitle()) : movieDTO.getTitle() != null) return false;
+        if (getDescription() != null ? !getDescription().equals(movieDTO.getDescription()) : movieDTO.getDescription() != null)
+            return false;
+        if (getRentStart() != null ? !getRentStart().equals(movieDTO.getRentStart()) : movieDTO.getRentStart() != null)
+            return false;
+        if (getRentEnd() != null ? !getRentEnd().equals(movieDTO.getRentEnd()) : movieDTO.getRentEnd() != null)
+            return false;
+        return getGenre() != null ? getGenre().equals(movieDTO.getGenre()) : movieDTO.getGenre() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getTitle() != null ? getTitle().hashCode() : 0);
+        result = 31 * result + (getDescription() != null ? getDescription().hashCode() : 0);
+        result = 31 * result + getDuration();
+        result = 31 * result + (getRentStart() != null ? getRentStart().hashCode() : 0);
+        result = 31 * result + (getRentEnd() != null ? getRentEnd().hashCode() : 0);
+        result = 31 * result + (getGenre() != null ? getGenre().hashCode() : 0);
+        result = 31 * result + getRating();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "MovieDTO{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", duration=" + duration +
-                ", rentStart=" + rentStart +
-                ", rentEnd=" + rentEnd +
-                ", genre='" + genre + '\'' +
-                ", rating=" + rating +
+                "Title = '" + title + '\'' +
+                ", Description = '" + description + '\'' +
+                ", Duration = " + duration +
+                ", Rent Start = " + rentStart +
+                ", Rent End = " + rentEnd +
+                ", Genre = '" + genre + '\'' +
+                ", Rating = " + rating +
                 "} " + super.toString();
     }
 }

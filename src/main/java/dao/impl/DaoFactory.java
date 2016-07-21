@@ -2,7 +2,8 @@ package dao.impl;
 
 import dao.api.Dao;
 import helpers.PropertyHolder;
-import model.Movie;
+import model.*;
+
 
 /**
  * Created by serj27 on 02.06.2016.
@@ -11,6 +12,11 @@ public class DaoFactory {
     private static DaoFactory instance = null;
 
     private Dao<Integer, Movie> movieDao;
+    private Dao<Integer, Hall> hallDao;
+    private Dao<Integer, Row> rowDao;
+    private Dao<Integer, Session> sessionDao;
+    private Dao<Integer, Tickets> ticketsDao;
+    private Dao<Integer, Users> usersDao;
 
     private DaoFactory(){
         loadDaos();
@@ -30,6 +36,11 @@ public class DaoFactory {
 
         }else{
             movieDao = new MovieDaoImpl();
+            hallDao = new HallDaoImpl();
+            rowDao = new RowDaoImpl();
+            sessionDao = new SessionDaoImpl();
+            ticketsDao = new TicketsDaoImpl();
+            usersDao = new UserDaoImpl();
         }
     }
 
@@ -40,5 +51,47 @@ public class DaoFactory {
     public void setMovieDao(Dao<Integer, Movie> movieDao) {
         this.movieDao = movieDao;
     }
+
+    public Dao<Integer, Hall> getHallDao() {
+        return hallDao;
+    }
+
+    public void setHallDao(Dao<Integer, Hall> hallDao) {
+        this.hallDao = hallDao;
+    }
+
+    public Dao<Integer, Row> getRowDao() {
+        return rowDao;
+    }
+
+    public void setRowDao(Dao<Integer, Row> rowsDao) {
+        this.rowDao = rowsDao;
+    }
+
+    public Dao<Integer, Session> getSessionDao() {
+        return sessionDao;
+    }
+
+    public void setSessionDao(Dao<Integer, Session> sessionDao) {
+        this.sessionDao = sessionDao;
+    }
+
+    public Dao<Integer, Tickets> getTicketsDao() {
+        return ticketsDao;
+    }
+
+    public void setTicketsDao(Dao<Integer, Tickets> ticketsDao) {
+        this.ticketsDao = ticketsDao;
+    }
+
+    public Dao<Integer, Users> getUsersDao() {
+        return usersDao;
+    }
+
+    public void setUsersDao(Dao<Integer, Users> usersDao) {
+        this.usersDao = usersDao;
+    }
+
+
 }
 

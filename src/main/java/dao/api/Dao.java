@@ -9,14 +9,15 @@ import java.util.List;
  */
 public interface Dao<K, T extends Entity<K>> {
 
-    List<T> getAll();
+    List<T> findAll();
 
-    T getById(K key);
+    T findOne(K key);
+
+    T getBy(String fieldName, String value);
 
     void save(T entity);
 
-    void delete(K key);
+    void deleteOne(K key);
 
     void update(T entity);
-
 }

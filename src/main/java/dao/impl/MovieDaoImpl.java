@@ -66,4 +66,23 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
         return result;
     }
 
+    @Override
+    public List<Movie> findAll() {
+        return null;
+    }
+
+    @Override
+    public Movie findOne(Integer key) {
+        return null;
+    }
+
+    @Override
+    public Movie getBy(String fieldName, String value) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
 }
