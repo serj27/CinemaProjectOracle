@@ -34,21 +34,19 @@ public class MovieServiceImpl implements Service<Integer, MovieDTO> {
     @Override
     public List<MovieDTO> getAll() {
         List<Movie> movies = movieDao.findAll();
-        List<MovieDTO> movieDTOs = beanMapper.listMapToList(movies, MovieDTO.class);
-        return movieDTOs;
+        return BeanMapper.listMapToList(movies, MovieDTO.class);
     }
 
     @Override
     public void save(MovieDTO movieDto) {
-        Movie movie = beanMapper.singleMapper(movieDto, Movie.class);
+        Movie movie = BeanMapper.singleMapper(movieDto, Movie.class);
         movieDao.save(movie);
     }
 
     @Override
     public MovieDTO getById(Integer id) {
         Movie movie = movieDao.findOne(id);
-        MovieDTO movieDTO = beanMapper.singleMapper(movie, MovieDTO.class);
-        return movieDTO;
+        return BeanMapper.singleMapper(movie, MovieDTO.class);
     }
 
 
@@ -59,7 +57,7 @@ public class MovieServiceImpl implements Service<Integer, MovieDTO> {
 
     @Override
     public void update(MovieDTO entity) {
-        Movie movie = beanMapper.singleMapper(entity, Movie.class);
+        Movie movie = BeanMapper.singleMapper(entity, Movie.class);
         movieDao.update(movie);
     }
 

@@ -18,9 +18,9 @@
         <th>Заполните информацию о фильме</th>
     </tr>
     <tr>
-        <td><p><a href="/app">Главная страничка </a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка </a></p></td>
         <td rowspan="200" valign="top" align="center">
-            <form name="addMovie" method="get" action="${pageContext.servletContext.contextPath}/thxForAddMovie">
+            <form name="addMovie" method="get" action="${pageContext.servletContext.contextPath}thxForAddMovie">
                 Title: <input type="text" name="title"/><br/>
                 Description: <input type="text" name="description"/><br/>
                 Duration: <input type="text" name="duration"/><br/>
@@ -33,10 +33,10 @@
         </td>
     </tr>
     <tr>
-        <td><p><a href="/app/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="/app/pages/admin/admin">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

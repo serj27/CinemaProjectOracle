@@ -1,3 +1,5 @@
+<jsp:useBean id="sessionDTO" scope="request" type="com.sun.corba.se.impl.ior.GenericIdentifiable"/>
+<jsp:useBean id="rowsDTOs" scope="request" type="java.util.List"/>
 <%--
   Created by IntelliJ IDEA.
   User: serj27
@@ -19,7 +21,7 @@
         <th>Список мест в зале</th>
     </tr>
     <tr>
-        <td><p><a href="/app">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <form name="seats" method="post" action="${pageContext.servletContext.contextPath}/thxForBuyTickets?session_id=${sessionDTO.id}">
                 <c:forEach items="${rowsDTOs}" var="row">
@@ -31,9 +33,9 @@
                 <input type="submit" value="Покупка"/></form></td>
     </tr>
     <tr>
-        <td><p><a href="/app/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
     </tr>
-    <td><p><a href="/app/pages/users/personalPage">Личный кабинет</a></p></td>
+    <td><p><a href="${pageContext.request.contextPath}webapp/Pages/users/personalPage">Личный кабинет</a></p></td>
 </table>
 </body>
 </html>

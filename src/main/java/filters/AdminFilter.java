@@ -14,7 +14,7 @@ import static dto.UserDTO.Role.ADMIN;
  * Created by serj27 on 17.07.2016.
  */
 
-@WebFilter(filterName = "AdminFilter", urlPatterns = "/pages/admin/*")
+@WebFilter(filterName = "AdminFilter", urlPatterns = "/Pages/admin/*")
 public class AdminFilter implements Filter {
 
     public void destroy() {
@@ -30,7 +30,7 @@ public class AdminFilter implements Filter {
         } else {
             request.getSession().setAttribute("url", request.getRequestURI());
             request.getSession().setAttribute("message", "You have to be admin");
-            response.sendRedirect(request.getContextPath() + "/pages/common/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/Pages/common/login.jsp");
         }
     }
     public void init(FilterConfig config) throws ServletException {

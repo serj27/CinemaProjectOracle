@@ -34,20 +34,18 @@ public class TicketsServiceImpl implements Service<Integer, TicketsDTO> {
     @Override
     public List<TicketsDTO> getAll() {
         List<Tickets> ticketsList = ticketsDao.findAll();
-        List<TicketsDTO> ticketsDTOs = beanMapper.listMapToList(ticketsList, TicketsDTO.class);
-        return ticketsDTOs;
+        return BeanMapper.listMapToList(ticketsList, TicketsDTO.class);
     }
 
     @Override
     public TicketsDTO getById(Integer id) {
         Tickets tickets = ticketsDao.findOne(id);
-        TicketsDTO ticketsDTO = beanMapper.singleMapper(tickets, TicketsDTO.class);
-        return ticketsDTO;
+        return BeanMapper.singleMapper(tickets, TicketsDTO.class);
     }
 
     @Override
     public void save(TicketsDTO entity) {
-        Tickets tickets = beanMapper.singleMapper(entity, Tickets.class);
+        Tickets tickets = BeanMapper.singleMapper(entity, Tickets.class);
         ticketsDao.save(tickets);
     }
 
@@ -69,7 +67,7 @@ public class TicketsServiceImpl implements Service<Integer, TicketsDTO> {
 
     @Override
     public void update(TicketsDTO entity) {
-        Tickets tickets = beanMapper.singleMapper(entity, Tickets.class);
+        Tickets tickets = BeanMapper.singleMapper(entity, Tickets.class);
         ticketsDao.update(tickets);
     }
 }

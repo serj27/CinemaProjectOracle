@@ -34,20 +34,18 @@ public class SessionServiceImpl implements Service<Integer, SessionDTO> {
     @Override
     public List<SessionDTO> getAll() {
         List<Session> sessionList = sessionDao.findAll();
-        List<SessionDTO> sessionDTOs = beanMapper.listMapToList(sessionList, SessionDTO.class);
-        return sessionDTOs;
+        return BeanMapper.listMapToList(sessionList, SessionDTO.class);
     }
 
     @Override
     public SessionDTO getById(Integer id) {
         Session session = sessionDao.findOne(id);
-        SessionDTO sessionDTO = beanMapper.singleMapper(session, SessionDTO.class);
-        return sessionDTO;
+        return BeanMapper.singleMapper(session, SessionDTO.class);
     }
 
     @Override
     public void save(SessionDTO entity) {
-        Session session = beanMapper.singleMapper(entity, Session.class);
+        Session session = BeanMapper.singleMapper(entity, Session.class);
         sessionDao.save(session);
     }
 
@@ -69,7 +67,7 @@ public class SessionServiceImpl implements Service<Integer, SessionDTO> {
 
     @Override
     public void update(SessionDTO entity) {
-        Session session = beanMapper.singleMapper(entity, Session.class);
+        Session session = BeanMapper.singleMapper(entity, Session.class);
         sessionDao.update(session);
     }
 }

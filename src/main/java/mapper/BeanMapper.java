@@ -1,7 +1,6 @@
 package mapper;
 
 import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
     public final class BeanMapper {
 
     private static BeanMapper beanMapper = new BeanMapper();
-    private static Mapper mapper;
+    private static DozerBeanMapper mapper;
 
     private BeanMapper() {
         List<String> mappingFiles = new ArrayList();
@@ -32,7 +31,10 @@ import java.util.List;
 
 
     public static <T> T singleMapper(Object from, Class<T> toClass) {
-        T map = mapper.map(from, toClass);
+        T map = null;
+        if (from != null) {
+            map = mapper.map(from, toClass);
+        }
         return map;
     }
 

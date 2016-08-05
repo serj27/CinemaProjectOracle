@@ -32,20 +32,19 @@ public class HallServiceImpl implements Service<Integer, HallDTO> {
     @Override
     public List<HallDTO> getAll() {
         List<Hall> hallList = hallDao.findAll();
-        List<HallDTO> hallDTOs = beanMapper.listMapToList(hallList, HallDTO.class);
-        return hallDTOs;
+        return BeanMapper.listMapToList(hallList, HallDTO.class);
     }
 
     @Override
     public HallDTO getById(Integer id) {
         Hall hall = hallDao.findOne(id);
-        HallDTO hallDTO = beanMapper.singleMapper(hall, HallDTO.class);
+        HallDTO hallDTO = BeanMapper.singleMapper(hall, HallDTO.class);
         return null;
     }
 
     @Override
     public void save(HallDTO entity) {
-        Hall hall = beanMapper.singleMapper(entity, Hall.class);
+        Hall hall = BeanMapper.singleMapper(entity, Hall.class);
         hallDao.save(hall);
     }
 
@@ -56,7 +55,7 @@ public class HallServiceImpl implements Service<Integer, HallDTO> {
 
     @Override
     public void update(HallDTO entity) {
-        Hall hall = beanMapper.singleMapper(entity, Hall.class);
+        Hall hall = BeanMapper.singleMapper(entity, Hall.class);
         hallDao.update(hall);
     }
 }

@@ -2,7 +2,7 @@ package dto;
 
 import model.Entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by serj27 on 02.06.2016.
@@ -12,15 +12,15 @@ public class MovieDTO extends Entity<Integer> {
     private String title;
     private String description;
     private int duration;
-    private Date rentStart;
-    private Date rentEnd;
+    private LocalDate rentStart;
+    private LocalDate rentEnd;
     private String genre;
     private int rating;
 
     public MovieDTO() {
     }
 
-    public MovieDTO(String title, String description, int duration, Date rentStart, Date rentEnd, String genre, int rating) {
+    public MovieDTO(String title, String description, int duration, LocalDate rentStart, LocalDate rentEnd, String genre, int rating) {
         this.title = title;
         this.description = description;
         this.duration = duration;
@@ -34,19 +34,19 @@ public class MovieDTO extends Entity<Integer> {
         this.duration = duration;
     }
 
-    public Date getRentStart() {
+    public LocalDate getRentStart() {
         return rentStart;
     }
 
-    public void setRentStart(Date rentStart) {
+    public void setRentStart(LocalDate rentStart) {
         this.rentStart = rentStart;
     }
 
-    public Date getRentEnd() {
+    public LocalDate getRentEnd() {
         return rentEnd;
     }
 
-    public void setRentEnd(Date rentEnd) {
+    public void setRentEnd(LocalDate rentEnd) {
         this.rentEnd = rentEnd;
     }
 

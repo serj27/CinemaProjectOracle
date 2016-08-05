@@ -1,3 +1,5 @@
+<jsp:useBean id="movieDTO" scope="request" type="com.sun.deploy.security.ruleset.RuleId"/>
+<jsp:useBean id="movieDTO" scope="request" type="java.util.List"/>
 <%--
   Created by IntelliJ IDEA.
   User: serj27
@@ -25,7 +27,7 @@
                 <tr>
                     <th>Название:</th><th>Описание:</th><th>Сеансы:</th>
                 </tr>
-                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="pages/users/sessionList?movieId=${movieDTO.id}">Список сеансов</a></center></td></tr>
+                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="Pages/users/sessionList?movieId=${movieDTO.id}">Список сеансов</a></center></td></tr>
             </table>
         </td>
     </tr>
@@ -33,7 +35,7 @@
         <td><p><a href="moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="pages/users/personalPage">Личный кабинет</a></p></td>
+        <td><p><a href="Pages/users/personalPage">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

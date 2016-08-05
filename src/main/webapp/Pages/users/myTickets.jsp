@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="ticketsDTOs" scope="request" type="java.util.List"/>
 <%--
   Created by IntelliJ IDEA.
   User: serj27
@@ -19,8 +19,9 @@
         <th>Мои билеты</th>
     </tr>
     <tr>
-        <td><p><a href="/app">Главная сраничка</a> </p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp">Главная сраничка</a> </p></td>
         <td rowspan="200" valign="top" align="center">
+
             <c:forEach items="${ticketsDTOs}" var="ticket">
                 Ряд: ${ticket.rowNumber}<br/>
                 Место: ${ticket.seatNumber}<br/>
@@ -30,9 +31,9 @@
         </td>
     </tr>
     <tr>
-    <td><p><a href="/app/moviesPage">Фильмы</a> </p></td>
+    <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a> </p></td>
     </tr>
-    <td><p><a href="/app/pages/users/personalPage">Личный кабинет</a> </p></td>
+    <td><p><a href="${pageContext.request.contextPath}webapp/pages/users/personalPage">Личный кабинет</a> </p></td>
 </table>
 </body>
 </html>

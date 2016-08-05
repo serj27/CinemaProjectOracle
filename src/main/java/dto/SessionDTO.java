@@ -64,10 +64,7 @@ public class SessionDTO extends Entity<Integer> {
 
         SessionDTO that = (SessionDTO) o;
 
-        if (movieID != that.movieID) return false;
-        if (hallID != that.hallID) return false;
-        if (Double.compare(that.price, price) != 0) return false;
-        return startSession.equals(that.startSession);
+        return movieID == that.movieID && hallID == that.hallID && Double.compare(that.price, price) == 0 && startSession.equals(that.startSession);
 
     }
 

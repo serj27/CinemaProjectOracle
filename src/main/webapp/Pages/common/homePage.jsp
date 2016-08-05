@@ -29,7 +29,7 @@
         <td><p><a href="moviesPage.jsp">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="pages/users/personalPage">Личный кабинет</a></p></td>
+        <td><p><a href="Pages/users/personalPage">Личный кабинет</a></p></td>
     </tr>
 </table>
 

@@ -71,4 +71,23 @@ public class UserDaoImpl extends CrudDAO<Users>{
         return usersList;
     }
 
+    @Override
+    public List<Users> findAll() {
+        return null;
+    }
+
+    @Override
+    public Users findOne(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
+
+    @Override
+    public Users getBy(String login, String value) {
+        return null;
+    }
 }

@@ -33,15 +33,13 @@ public class RowServiceImpl implements Service<Integer, RowDTO> {
     @Override
     public List<RowDTO> getAll() {
         List<Row> rowsList = rowDao.findAll();
-        List<RowDTO> rowDTO = beanMapper.listMapToList(rowsList, RowDTO.class);
-        return rowDTO;
+        return BeanMapper.listMapToList(rowsList, RowDTO.class);
     }
 
     @Override
     public RowDTO getById(Integer id) {
         Row row = rowDao.findOne(id);
-        RowDTO rowDTO = beanMapper.singleMapper(row, RowDTO.class);
-        return rowDTO;
+        return BeanMapper.singleMapper(row, RowDTO.class);
     }
 
     public List<RowDTO> getByHallID (String value){
@@ -57,7 +55,7 @@ public class RowServiceImpl implements Service<Integer, RowDTO> {
 
     @Override
     public void save(RowDTO entity) {
-        Row row = beanMapper.singleMapper(entity, Row.class);
+        Row row = BeanMapper.singleMapper(entity, Row.class);
         rowDao.save(row);
     }
 
@@ -68,7 +66,7 @@ public class RowServiceImpl implements Service<Integer, RowDTO> {
 
     @Override
     public void update(RowDTO entity) {
-        Row row = beanMapper.singleMapper(entity, Row.class);
+        Row row = BeanMapper.singleMapper(entity, Row.class);
         rowDao.update(row);
     }
 }

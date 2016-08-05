@@ -51,9 +51,7 @@ public class RowDTO extends Entity<Integer> {
 
         RowDTO rowsDTO = (RowDTO) o;
 
-        if (getRowNumber() != rowsDTO.getRowNumber()) return false;
-        if (getAmountSeats() != rowsDTO.getAmountSeats()) return false;
-        return getHallID() == rowsDTO.getHallID();
+        return getRowNumber() == rowsDTO.getRowNumber() && getAmountSeats() == rowsDTO.getAmountSeats() && getHallID() == rowsDTO.getHallID();
 
     }
 

@@ -35,7 +35,7 @@
         <td><p><a href="/app/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="/app/pages/admin/admin.jsp">Личный кабинет</a></p></td>
+        <td><p><a href="/app/Pages/admin/admin.jsp">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

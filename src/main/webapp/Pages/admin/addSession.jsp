@@ -1,4 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="hall" scope="request" type="model.Hall"/>
+<jsp:useBean id="hallDTOs" scope="request" type=""/>
+<jsp:useBean id="movieDTOs" scope="request" type=""/>
+
 <%--
   Created by IntelliJ IDEA.
   User: serj27
@@ -19,18 +22,18 @@
         <th>Заполните информацию о сеансе</th>
     </tr>
     <tr>
-        <td><p><a href="/app">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
-            <form name="addSession" method="get" action="${pageContext.servletContext.contextPath}/thxForAddSession">
+            <form name="addSession" method="get" action="${pageContext.servletContext.contextPath}thxForAddSession">
                 Movie: <select name="movie_id">
                 <c:forEach items="${movieDTOs}" var="movies">
                     <option value="${movies.id}">${movies.title}</option>
                 </c:forEach>
             </select>
                 Hall: <select name="hall_id">
-                <c:forEach items="${hallDTOs}" var="hall">
+                <c: forEach items="${hallDTOs}" var="hall">
                     <option value="${hall.id}">${hall.hallName}</option>
-                </c:forEach>
+                </c: forEach>
             </select>
                 Price: <input type="text" name="price"/>
                 Start Time: Year: <input type="text" name="syear"/> Month: <input type="text" name="smonth"/>: Day: <input type="text" name="sday"/><br/>
@@ -39,10 +42,10 @@
         </td>
     </tr>
     <tr>
-        <td><p><a href="/app/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="/app/pages/admin/admin">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

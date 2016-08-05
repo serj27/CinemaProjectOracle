@@ -59,4 +59,24 @@ public class TicketsDaoImpl extends CrudDAO<Tickets> {
         }
         return ticketsList;
     }
+
+    @Override
+    public List<Tickets> findAll() {
+        return null;
+    }
+
+    @Override
+    public Tickets findOne(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
+
+    @Override
+    public Tickets getBy(String login, String value) {
+        return null;
+    }
 }

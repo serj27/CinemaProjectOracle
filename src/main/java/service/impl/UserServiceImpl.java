@@ -33,27 +33,24 @@ public class UserServiceImpl implements Service<Integer, UserDTO> {
     @Override
     public List<UserDTO> getAll() {
         List<Users> usersList = usersDao.findAll();
-        List<UserDTO> usersDTOs = beanMapper.listMapToList(usersList, UserDTO.class);
-        return usersDTOs;
+        return BeanMapper.listMapToList(usersList, UserDTO.class);
     }
 
     @Override
     public UserDTO getById(Integer id) {
         Users users = usersDao.findOne(id);
-        UserDTO usersDTO = beanMapper.singleMapper(users, UserDTO.class);
-        return usersDTO;
+        return BeanMapper.singleMapper(users, UserDTO.class);
     }
 
     @Override
     public void save(UserDTO entity) {
-        Users users = beanMapper.singleMapper(entity, Users.class);
+        Users users = BeanMapper.singleMapper(entity, Users.class);
         usersDao.save(users);
     }
 
     public UserDTO getByLogin(String value){
         Users users = usersDao.getBy("login", value);
-        UserDTO usersDTO = beanMapper.singleMapper(users, UserDTO.class);
-        return usersDTO;
+        return BeanMapper.singleMapper(users, UserDTO.class);
     }
 
     @Override
@@ -63,7 +60,7 @@ public class UserServiceImpl implements Service<Integer, UserDTO> {
 
     @Override
     public void update(UserDTO entity) {
-        Users users = beanMapper.singleMapper(entity, Users.class);
+        Users users = BeanMapper.singleMapper(entity, Users.class);
         usersDao.update(users);
     }
 }

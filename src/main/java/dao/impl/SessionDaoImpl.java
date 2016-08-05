@@ -56,4 +56,25 @@ public class SessionDaoImpl extends CrudDAO<Session> {
         }
         return sessionList;
     }
+
+
+    @Override
+    public List<Session> findAll() {
+        return null;
+    }
+
+    @Override
+    public Session findOne(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
+
+    @Override
+    public Session getBy(String login, String value) {
+        return null;
+    }
 }

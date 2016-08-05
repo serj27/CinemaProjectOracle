@@ -55,4 +55,25 @@ public class RowDaoImpl extends CrudDAO<Row> {
         }
         return rowList;
     }
+
+
+    @Override
+    public List<Row> findAll() {
+        return null;
+    }
+
+    @Override
+    public Row findOne(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
+
+    @Override
+    public Row getBy(String login, String value) {
+        return null;
+    }
 }

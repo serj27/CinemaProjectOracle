@@ -45,4 +45,25 @@ public class HallDaoImpl extends CrudDAO<Hall>{
         }
         return hallList;
     }
+
+
+    @Override
+    public List<Hall> findAll() {
+        return null;
+    }
+
+    @Override
+    public Hall findOne(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void deleteOne(Integer key) {
+
+    }
+
+    @Override
+    public Hall getBy(String login, String value) {
+        return null;
+    }
 }
