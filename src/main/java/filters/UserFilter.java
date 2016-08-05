@@ -14,7 +14,7 @@ import static dto.UserDTO.Role.USER;
 /**
  * Created by serj27 on 17.07.2016.
  */
-@WebFilter(filterName = "UserFilter", urlPatterns = "/pages/users/*" )
+@WebFilter(filterName = "UserFilter", urlPatterns = "/Pages/users/*" )
 public class UserFilter implements Filter {
 
     public void destroy() {
