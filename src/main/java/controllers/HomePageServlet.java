@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "HomePageServlet", urlPatterns = "/personalPage")
+@WebServlet(name = "HomePageServlet", urlPatterns = "/homePage")
 public class HomePageServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,6 +18,6 @@ public class HomePageServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("Pages/users/personalPage").forward(request,response);
+        request.getRequestDispatcher("Pages/common/homePage").forward(request,response);
     }
 }
