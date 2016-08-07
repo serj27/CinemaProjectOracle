@@ -25,7 +25,7 @@ public class PersonalAreaServlet extends HttpServlet {
         if (userDTO.getRole() == UserDTO.Role.USER){
             request.getRequestDispatcher("personalPage").forward(request,response);
         }else if (userDTO.getRole() == UserDTO.Role.ADMIN){
-            response.sendRedirect("/app/Pages/admin/admin");
+            response.sendRedirect("/webapp/Pages/admin/admin");
         }
     }
 
