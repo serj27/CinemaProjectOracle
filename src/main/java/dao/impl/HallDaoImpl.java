@@ -16,7 +16,7 @@ public class HallDaoImpl extends CrudDAO<Hall>{
 
     private static HallDaoImpl crudDAO;
 
-    public HallDaoImpl(){super(Hall.class);}
+    public HallDaoImpl(Class<Hall> hallClass){super(Hall.class);}
 
     @Override
     protected PreparedStatement createUpdateStatement(Connection connection, Hall entity) throws SQLException {

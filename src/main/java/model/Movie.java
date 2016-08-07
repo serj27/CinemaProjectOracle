@@ -35,9 +35,7 @@ public class Movie extends Entity<Integer> {
         return rentStart;
     }
 
-    public void setRentStart(LocalDate rentStart) {
-        this.rentStart = rentStart;
-    }
+    public void setRentStart(LocalDate rentStart) {this.rentStart = rentStart;}
 
     public LocalDate getRentEnd() {return rentEnd; }
 

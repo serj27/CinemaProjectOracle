@@ -18,19 +18,19 @@
         <th>Административное меню</th>
     </tr>
     <tr>
-        <td><p><a href="/app">Главеая страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главеая страничка</a></p></td>
         <td rowspan="200" valign="top">
-            <a href="${pageContext.request.contextPath}adminMovie">Управление фильмами</a><br/>
-            <a href="${pageContext.request.contextPath}adminSession">Управление сеансами</a><br/>
+            <a href="${pageContext.request.contextPath}../adminMovie">Управление фильмами</a><br/>
+            <a href="${pageContext.request.contextPath}../adminSession">Управление сеансами</a><br/>
             <br/>
-            <a href="${pageContext.request.contextPath}webapp/Pages/users/myTickets">Мои билеты</a>
+            <a href="${pageContext.request.contextPath}../webapp/Pages/users/myTickets">Мои билеты</a>
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin">Лтчный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/Pages/admin/admin">Лтчный кабинет</a></p></td>
     </tr>
 </table>
 </body>

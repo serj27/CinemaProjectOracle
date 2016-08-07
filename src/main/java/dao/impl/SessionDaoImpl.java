@@ -16,7 +16,7 @@ public class SessionDaoImpl extends CrudDAO<Session> {
 
     private static MovieDaoImpl crudDAO;
 
-    public SessionDaoImpl() {
+    public SessionDaoImpl(Class<Session> sessionClass) {
         super(Session.class);
     }
 

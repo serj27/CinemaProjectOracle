@@ -19,7 +19,7 @@
         <th>Мои билеты</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная сраничка</a> </p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная сраничка</a> </p></td>
         <td rowspan="200" valign="top" align="center">
 
             <c:forEach items="${ticketsDTOs}" var="ticket">
@@ -31,9 +31,9 @@
         </td>
     </tr>
     <tr>
-    <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a> </p></td>
+    <td><p><a href="${pageContext.request.contextPath}../moviesPage">Фильмы</a> </p></td>
     </tr>
-    <td><p><a href="${pageContext.request.contextPath}webapp/pages/users/personalPage">Личный кабинет</a> </p></td>
+    <td><p><a href="${pageContext.request.contextPath}../Pages/users/personalPage">Личный кабинет</a> </p></td>
 </table>
 </body>
 </html>

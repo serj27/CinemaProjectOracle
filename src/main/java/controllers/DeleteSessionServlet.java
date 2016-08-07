@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "DeleteSessionServlet", urlPatterns = "Pages/admin/deleteSession")
+@WebServlet(name = "DeleteSessionServlet", urlPatterns = "/Pages/admin/deleteSession")
 public class DeleteSessionServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

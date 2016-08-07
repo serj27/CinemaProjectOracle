@@ -21,21 +21,21 @@
         <th>Детальная информация о фильме</th>
     </tr>
     <tr>
-        <td><p><a href="homePage.jsp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../homePage.jsp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <table width="100%" border="2">
                 <tr>
                     <th>Название:</th><th>Описание:</th><th>Сеансы:</th>
                 </tr>
-                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="Pages/users/sessionList?movieId=${movieDTO.id}">Список сеансов</a></center></td></tr>
+                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="${pageContext.request.contextPath}../Pages/users/sessionList?movieId=${movieDTO.id}">Список сеансов</a></center></td></tr>
             </table>
         </td>
     </tr>
     <tr>
-        <td><p><a href="moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="Pages/users/personalPage">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../Pages/users/personalPage">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

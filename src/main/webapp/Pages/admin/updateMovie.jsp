@@ -21,7 +21,7 @@
     </tr>
     <tr>
 
-        <td><p><a href="${pageContext.servletContext.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.servletContext.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <form name="updForm" method="post" action="${pageContext.servletContext.contextPath}/thxForUpdateMovie?&id=${movieDTO.id}">
                 Title: <input type="text" name="title"/> <br/>
@@ -36,10 +36,10 @@
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.servletContext.contextPath}webapp/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.servletContext.contextPath}../webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.servletContext.contextPath}webapp/Pages/admin/admin">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.servletContext.contextPath}../webapp/Pages/admin/admin">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

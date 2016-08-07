@@ -20,7 +20,7 @@
         <th> Информация о профиле</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top">
             Firstname: ${userDTO.firstName}<br/>
             Lastname: ${userDTO.secondName} <br/>
@@ -30,14 +30,14 @@
             Sex:   ${userDTO.gender} <br/>
             Birthday: ${userDTO.birthday}<br/>
             <br/>
-            <a href="myTickets.jsp">Мои билеты</a>
+            <a href="${pageContext.request.contextPath}../myTickets.jsp">Мои билеты</a>
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="personalPage.jsp">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../personalPage.jsp">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

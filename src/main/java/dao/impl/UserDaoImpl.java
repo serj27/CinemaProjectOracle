@@ -17,7 +17,7 @@ public class UserDaoImpl extends CrudDAO<Users>{
 
     private static MovieDaoImpl crudDAO;
 
-    public UserDaoImpl() {
+    public UserDaoImpl(Class<Users> usersClass) {
         super(Users.class);
     }
 

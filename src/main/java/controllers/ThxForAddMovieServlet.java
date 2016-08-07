@@ -14,7 +14,7 @@ import java.time.LocalDate;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "ThxForAddMovieServlet",urlPatterns = "thxForAddMovie")
+@WebServlet(name = "ThxForAddMovieServlet",urlPatterns = "/thxForAddMovie")
 public class ThxForAddMovieServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

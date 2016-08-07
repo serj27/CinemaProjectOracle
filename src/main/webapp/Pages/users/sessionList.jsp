@@ -19,15 +19,15 @@
         <th class="col1">Сёрфинг по кинотеатру</th>
         <th>Список доступных сеансов</th>
     </tr>
-   <tr><td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a> </p></td>
+   <tr><td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a> </p></td>
    <td rowspan="200" valign="top" align="center">
 
        <c:forEach items="${sessionDTOs}" var="session">
-           <a href="session.jsp?hall_id=${session.hallID}&session_id=${session.id}">${session.id}</a><br/>
+           <a href="${pageContext.request.contextPath}../session.jsp?hall_id=${session.hallID}&session_id=${session.id}">${session.id}</a><br/>
        </c:forEach>
    </td> </tr>
-    <tr><td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a> </p></td></tr>
-    <td><p><a href="${pageContext.request.contextPath}webapp/pages/users/personalPage">Личный кабинет</a> </p></td>
+    <tr><td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a> </p></td></tr>
+    <td><p><a href="${pageContext.request.contextPath}../webapp/pages/users/personalPage">Личный кабинет</a> </p></td>
 </table>
 </body>
 </html>

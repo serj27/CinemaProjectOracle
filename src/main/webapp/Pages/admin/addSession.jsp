@@ -22,9 +22,9 @@
         <th>Заполните информацию о сеансе</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
-            <form name="addSession" method="get" action="${pageContext.servletContext.contextPath}thxForAddSession">
+            <form name="addSession" method="get" action="${pageContext.servletContext.contextPath}/thxForAddSession">
                 Movie: <select name="movie_id">
                 <c:forEach items="${movieDTOs}" var="movies">
                     <option value="${movies.id}">${movies.title}</option>
@@ -42,10 +42,10 @@
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/Pages/admin/admin">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

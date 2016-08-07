@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "AdminMovieServlet", urlPatterns = "Pages/admin/adminMovie")
+@WebServlet(name = "AdminMovieServlet", urlPatterns = "/Pages/admin/adminMovie")
 public class AdminMovieServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

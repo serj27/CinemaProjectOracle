@@ -19,21 +19,21 @@
         <th>Список фильмов:</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <br/>
             <h4>Выберите фильм, сеанс которого, вы хотите редактировать</h4>
 
             <c:forEach items="${movieDTOList}" var="movies">
-                <a href="changeSessions.jsp?id=${movies.id}">${movies.title}</a><br/>
+                <a href="${pageContext.request.contextPath}../changeSessions.jsp?id=${movies.id}">${movies.title}</a><br/>
             </c:forEach><br/>
-            <a href="addSession.jsp">Добавить сеанс</a>
+            <a href="${pageContext.request.contextPath}.//addSession.jsp">Добавить сеанс</a>
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a> </p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a> </p></td>
     </tr>
-    <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin.jsp">Личный кабинет</a> </p></td>
+    <td><p><a href="${pageContext.request.contextPath}../webapp/Pages/admin/admin.jsp">Личный кабинет</a> </p></td>
 </table>
 </body>
 </html>

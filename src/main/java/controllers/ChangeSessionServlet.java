@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "ChangeSessionServlet", urlPatterns = "Pages/admin/changeSessions")
+@WebServlet(name = "ChangeSessionServlet", urlPatterns = "/Pages/admin/changeSessions")
 public class ChangeSessionServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

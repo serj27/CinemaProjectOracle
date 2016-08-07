@@ -1,3 +1,4 @@
+<jsp:useBean id="movieDTOList" scope="request" type="java.util.List"/>
 <%--
   Created by IntelliJ IDEA.
   User: serj27
@@ -19,17 +20,17 @@
         <th>Список Фильмов:</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.servletContext.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.servletContext.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
-            <jsp:useBean id="movieDTOList" scope="request" type="java.util.List"/>
+
             <c:forEach items="${movieDTOList}" var="movies">
                 <a href="${pageContext.servletContext.contextPath}/movie?id=${movies.id}">${movies.title}</a><br/>
             </c:forEach></td>
     </tr>
     <tr>
-        <td><p><a href="moviesPage.jsp">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../moviesPage.jsp">Фильмы</a></p></td>
     </tr>
-    <td><p><a href="Pages/users/personalPage">Личный кабинет</a></p></td>
+    <td><p><a href="${pageContext.request.contextPath}../Pages/users/personalPage">Личный кабинет</a></p></td>
 </table>
 </body>
 </html>

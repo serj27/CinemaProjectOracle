@@ -72,6 +72,20 @@ public abstract class CrudDAO<T extends Entity<Integer>> implements Dao<Integer,
         }
     }
 
+    public void upload(T entity){
+        try (Connection connection = dataSource.getConnection();
+        PreparedStatement preparedStatement = createInsertStatement(connection, entity)){
+            preparedStatement.executeUpdate();
+            ResultSet rs = preparedStatement.getGeneratedKeys();
+            if (rs.next()){
+                entity.setId(rs.getInt(1));
+            }
+            connection.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void update(T entity) {
         try ( Connection connection = dataSource.getConnection();

@@ -21,22 +21,22 @@
         <th>Вы хотите удалить фильм?</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <table width="100%" border="2">
                 <tr>
                     <th>Название:</th><th>Описание:</th><th>Что делать с этим фильмом:</th>
                 </tr>
 
-                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="deleteMovie.jsp?id=${movieDTO.id}">Удалить</a><br/>
+                <tr><td><center>${movieDTO.title}</center></td><td>${movieDTO.description}</td><td><center><a href="${pageContext.request.contextPath}../deleteMovie.jsp?id=${movieDTO.id}">Удалить</a><br/>
             </table>
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/moviesPage">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/moviesPage">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin.jsp">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/Pages/admin/admin.jsp">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

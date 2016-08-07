@@ -19,19 +19,19 @@
         <th>Список фильмов:</th>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">
             <br/>
             <h4>Выберите фильм, который вы хотите редактировать</h4>
 
             <c:forEach items="${movieDTOList}" var="movies">
-                <a href="changeMovie.jsp?id=${movies.id}">${movies.title}</a><br/>
+                <a href="${pageContext.request.contextPath}../changeMovie.jsp?id=${movies.id}">${movies.title}</a><br/>
             </c:forEach>
-            <a href="addMovie.jsp">Добавить фильм</a>
+            <a href="${pageContext.request.contextPath}../addMovie.jsp">Добавить фильм</a>
         </td>
     </tr>
     <tr>
-        <td><p><a href="${pageContext.request.contextPath}webapp/Pages/admin/admin.jsp">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../webapp/Pages/admin/admin.jsp">Личный кабинет</a></p></td>
     </tr>
 </table>
 </body>

@@ -16,7 +16,7 @@ public class TicketsDaoImpl extends CrudDAO<Tickets> {
 
     private static MovieDaoImpl crudDAO;
 
-    public TicketsDaoImpl() {
+    public TicketsDaoImpl(Class<Tickets> ticketsClass) {
         super(Tickets.class);
     }
 

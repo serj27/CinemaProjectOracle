@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "AdminSessionServlet", urlPatterns = "Pages/admin/adminSession")
+@WebServlet(name = "AdminSessionServlet", urlPatterns = "/Pages/admin/adminSession")
 public class AdminSessionServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

@@ -35,12 +35,12 @@ public class DaoFactory {
         if(PropertyHolder.getInstance().isInMemoryDB()){
 
         }else{
-            movieDao = new MovieDaoImpl();
-            hallDao = new HallDaoImpl();
-            rowDao = new RowDaoImpl();
-            sessionDao = new SessionDaoImpl();
-            ticketsDao = new TicketsDaoImpl();
-            usersDao = new UserDaoImpl();
+            movieDao = new MovieDaoImpl(Movie.class);
+            hallDao = new HallDaoImpl(Hall.class);
+            rowDao = new RowDaoImpl(Row.class);
+            sessionDao = new SessionDaoImpl(Session.class);
+            ticketsDao = new TicketsDaoImpl(Tickets.class);
+            usersDao = new UserDaoImpl(Users.class);
         }
     }
 

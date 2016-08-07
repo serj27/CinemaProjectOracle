@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "MyTicketsServlet", urlPatterns = "Pages/users/myTickets")
+@WebServlet(name = "MyTicketsServlet", urlPatterns = "/myTickets")
 public class MyTicketsServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

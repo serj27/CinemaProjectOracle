@@ -19,17 +19,17 @@
         <th>Краткое описание кинотеатра</th>
     </tr>
     <tr>
-        <td><p><a href="homePage.jsp">Главная страничка</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../homePage.jsp">Главная страничка</a></p></td>
         <td rowspan="200" valign="top" align="center">Сайт кинотеатра был создан<br> адептом Oracle Academy
             serj277 Дьяченко<br>
             в 2016 году
         </td>
     </tr>
     <tr>
-        <td><p><a href="moviesPage.jsp">Фильмы</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../moviesPage.jsp">Фильмы</a></p></td>
     </tr>
     <tr>
-        <td><p><a href="Pages/users/personalPage">Личный кабинет</a></p></td>
+        <td><p><a href="${pageContext.request.contextPath}../Pages/users/personalPage">Личный кабинет</a></p></td>
     </tr>
 </table>
 

@@ -16,7 +16,7 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
 
     private static MovieDaoImpl crudDAO;
 
-    public MovieDaoImpl() {
+    public MovieDaoImpl(Class<Movie> movieClass) {
         super(Movie.class);
     }
 
@@ -26,8 +26,8 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
         preparedStatement.setString(1, entity.getTitle());
         preparedStatement.setString(2, entity.getDescription());
         preparedStatement.setInt(3, entity.getDuration());
-        preparedStatement.setDate(4, new java.sql.Date(entity.getRentStart().getTime()));
-        preparedStatement.setDate(4, new java.sql.Date(entity.getRentEnd().getTime()));
+        preparedStatement.setDate(4, Date.valueOf(entity.getRentStart()));
+        preparedStatement.setDate(4, Date.valueOf(entity.getRentEnd()));
         preparedStatement.setString(5, entity.getGenre());
         preparedStatement.setInt(6, entity.getRating());
         preparedStatement.setInt(7, entity.getId());
@@ -40,10 +40,11 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
         preparedStatement.setString(1, entity.getTitle());
         preparedStatement.setString(2, entity.getDescription());
         preparedStatement.setInt(3, entity.getDuration());
-        preparedStatement.setDate(4, new java.sql.Date(entity.getRentStart().getTime()));
-        preparedStatement.setDate(5, new java.sql.Date(entity.getRentEnd().getTime()));
+        preparedStatement.setDate(4, Date.valueOf(entity.getRentStart()));
+        preparedStatement.setDate(5, Date.valueOf(entity.getRentEnd()));
         preparedStatement.setString(6, entity.getGenre());
         preparedStatement.setInt(7, entity.getRating());
+        preparedStatement.setInt(8, entity.getId());
         return preparedStatement;
     }
 
@@ -57,8 +58,8 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
             movie.setTitle(resultSet.getString("title"));
             movie.setDescription(resultSet.getString("description"));
             movie.setDuration(resultSet.getInt("duration"));
-            movie.setRentStart(resultSet.getDate("rent_start"));
-            movie.setRentEnd(resultSet.getDate("rent_end"));
+            movie.setRentStart(resultSet.getDate("rent_start").toLocalDate());
+            movie.setRentEnd(resultSet.getDate("rent_end").toLocalDate());
             movie.setGenre(resultSet.getString("genre"));
             movie.setRating(resultSet.getInt("rating"));
             result.add(movie);

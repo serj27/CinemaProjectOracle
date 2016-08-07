@@ -18,7 +18,7 @@ public class RowDaoImpl extends CrudDAO<Row> {
 
     private static MovieDaoImpl crudDAO;
 
-    public RowDaoImpl() {
+    public RowDaoImpl(Class<Row> rowClass) {
         super(Row.class);
     }
 

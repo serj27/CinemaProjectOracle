@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by serjd on 04.08.2016.
  */
-@WebServlet(name = "ChangeMovieServlet", urlPatterns = "Pages/admin/changeMovie")
+@WebServlet(name = "ChangeMovieServlet", urlPatterns = "/Pages/admin/changeMovie")
 public class ChangeMovieServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
