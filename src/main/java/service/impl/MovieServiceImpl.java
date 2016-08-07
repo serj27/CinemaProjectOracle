@@ -16,11 +16,9 @@ public class MovieServiceImpl implements Service<Integer, MovieDTO> {
 
     private static MovieServiceImpl service;
     private Dao<Integer, Movie> movieDao;
-    private BeanMapper beanMapper;
 
     private MovieServiceImpl() {
         movieDao = DaoFactory.getInstance().getMovieDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized MovieServiceImpl getInstance() {

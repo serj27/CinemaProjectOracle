@@ -15,11 +15,9 @@ import java.util.List;
 public class HallServiceImpl implements Service<Integer, HallDTO> {
     private static HallServiceImpl service;
     private Dao<Integer, Hall> hallDao;
-    private BeanMapper beanMapper;
 
     private HallServiceImpl() {
         hallDao = DaoFactory.getInstance().getHallDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized HallServiceImpl getInstance() {
@@ -34,6 +32,8 @@ public class HallServiceImpl implements Service<Integer, HallDTO> {
         List<Hall> hallList = hallDao.findAll();
         return BeanMapper.listMapToList(hallList, HallDTO.class);
     }
+
+
 
     @Override
     public HallDTO getById(Integer id) {

@@ -22,16 +22,7 @@ public class Main {
         Connection connection = DataSource.getInstance().getConnection();
         CrudDAO<Movie> movieCrudDAO = new MovieDaoImpl(Movie.class);
         MovieDaoImpl movieDaoImpl = new MovieDaoImpl(Movie.class);
-        CrudDAO<Hall> hallCrudDAO = new HallDaoImpl(Hall.class);
-        HallDaoImpl hallDaoImpl = new HallDaoImpl(Hall.class);
-        CrudDAO<Row> rowCrudDAO = new RowDaoImpl(Row.class);
-        RowDaoImpl rowDaoImpl = new RowDaoImpl(Row.class);
-        CrudDAO<Session> sessionCrudDAO = new SessionDaoImpl(Session.class);
-        SessionDaoImpl sessionDaoImpl = new SessionDaoImpl(Session.class);
-        CrudDAO<Tickets> ticketsCrudDAO = new TicketsDaoImpl(Tickets.class);
-        TicketsDaoImpl ticketsDaoImpl = new TicketsDaoImpl(Tickets.class);
-        CrudDAO<Users> usersCrudDAO = new UserDaoImpl(Users.class);
-        UserDaoImpl userDaoImpl = new UserDaoImpl(Users.class);
+
 
         System.out.println(movieCrudDAO.getById(1));
 

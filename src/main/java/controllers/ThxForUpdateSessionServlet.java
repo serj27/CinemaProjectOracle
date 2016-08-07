@@ -31,7 +31,7 @@ public class ThxForUpdateSessionServlet extends HttpServlet {
         sessionDTO.setStartSession(startSession);
         SessionServiceImpl.getInstance().update(sessionDTO);
 
-        request.getRequestDispatcher("Pages/admin/admin").forward(request,response);
+        request.getRequestDispatcher("/Pages/admin/admin").forward(request,response);
     }
 
 }

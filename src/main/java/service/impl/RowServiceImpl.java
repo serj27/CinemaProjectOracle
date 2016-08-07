@@ -16,11 +16,9 @@ import java.util.List;
 public class RowServiceImpl implements Service<Integer, RowDTO> {
     private static RowServiceImpl service;
     private Dao<Integer, Row> rowDao;
-    private BeanMapper beanMapper;
 
     private RowServiceImpl(){
         rowDao = DaoFactory.getInstance().getRowDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized RowServiceImpl getInstance() {

@@ -17,11 +17,9 @@ public class TicketsServiceImpl implements Service<Integer, TicketsDTO> {
 
     private static TicketsServiceImpl service;
     private Dao<Integer, Tickets> ticketsDao;
-    private BeanMapper beanMapper;
 
     private TicketsServiceImpl() {
         ticketsDao = DaoFactory.getInstance().getTicketsDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized TicketsServiceImpl getInstance() {

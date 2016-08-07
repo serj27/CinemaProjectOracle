@@ -17,11 +17,9 @@ public class SessionServiceImpl implements Service<Integer, SessionDTO> {
 
     private static SessionServiceImpl service;
     private Dao<Integer , Session> sessionDao;
-    private BeanMapper beanMapper;
 
     private SessionServiceImpl() {
         sessionDao = DaoFactory.getInstance().getSessionDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized SessionServiceImpl getInstance() {

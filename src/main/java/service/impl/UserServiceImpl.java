@@ -16,11 +16,9 @@ public class UserServiceImpl implements Service<Integer, UserDTO> {
 
     private static UserServiceImpl service;
     private Dao<Integer, Users> usersDao;
-    private BeanMapper beanMapper;
 
     private UserServiceImpl() {
         usersDao = DaoFactory.getInstance().getUsersDao();
-        beanMapper = BeanMapper.getInstance();
     }
 
     public static synchronized UserServiceImpl getInstance() {
