@@ -23,7 +23,6 @@ public class Main {
         CrudDAO<Movie> movieCrudDAO = new MovieDaoImpl(Movie.class);
         MovieDaoImpl movieDaoImpl = new MovieDaoImpl(Movie.class);
 
-
         System.out.println(movieCrudDAO.getById(1));
 
         Movie movie1 = new Movie("Stranger Things","На дворе уютные 80-е. В маленьком провинциальном " +
