@@ -21,6 +21,6 @@ public class DeleteSessionServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
         SessionServiceImpl.getInstance().delete(Integer.parseInt(request.getParameter("id")));
-        request.getRequestDispatcher("changeSessions").forward(request,response);
+        request.getRequestDispatcher("changeSessions.jsp").forward(request,response);
     }
 }

@@ -31,7 +31,7 @@ public class DaoFactory {
         return instance;
     }
 
-    private void loadDaos() {
+        private void loadDaos() {
         if(PropertyHolder.getInstance().isInMemoryDB()){
 
         }else{

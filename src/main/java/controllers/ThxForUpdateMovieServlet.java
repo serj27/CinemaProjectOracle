@@ -43,6 +43,6 @@ public class ThxForUpdateMovieServlet extends HttpServlet {
 
         MovieServiceImpl.getInstance().update(movieDTO);
 
-        request.getRequestDispatcher("/Pages/admin/admin").forward(request,response);
+        request.getRequestDispatcher("admin.jsp").forward(request,response);
     }
 }

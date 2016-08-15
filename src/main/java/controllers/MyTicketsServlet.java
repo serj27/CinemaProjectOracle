@@ -26,6 +26,6 @@ public class MyTicketsServlet extends HttpServlet{
         UserDTO userDTO = (UserDTO) request.getSession().getAttribute("user");
         List<TicketsDTO> ticketsDTOs = TicketsServiceImpl.getInstance().getByUserID(userDTO.getId().toString());
         request.setAttribute("ticketsDTOs",ticketsDTOs);
-        request.getRequestDispatcher("myTickets").forward(request,response);
+        request.getRequestDispatcher("myTickets.jsp").forward(request,response);
      }
 }

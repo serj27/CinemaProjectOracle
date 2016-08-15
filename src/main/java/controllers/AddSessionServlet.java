@@ -28,6 +28,6 @@ public class AddSessionServlet extends HttpServlet {
         List<HallDTO> hallDTOs = HallServiceImpl.getInstance().getAll();
         request.setAttribute("movieDTOs",movieDTOs);
         request.setAttribute("hallDTOs",hallDTOs);
-        request.getRequestDispatcher("addSession").forward(request,response);
+        request.getRequestDispatcher("addSession.jsp").forward(request,response);
     }
 }

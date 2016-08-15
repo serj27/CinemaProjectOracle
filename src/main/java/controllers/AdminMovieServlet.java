@@ -20,6 +20,6 @@ public class AdminMovieServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<MovieDTO> movieDTOList = MovieServiceImpl.getInstance().getAll();
         request.setAttribute("movieDTOList",movieDTOList);
-        request.getRequestDispatcher("adminMovie").forward(request,response);
+        request.getRequestDispatcher("adminMovie.jsp").forward(request,response);
     }
 }

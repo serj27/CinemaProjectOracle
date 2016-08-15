@@ -24,6 +24,6 @@ public class ChangeSessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<SessionDTO> sessionDTOs = SessionServiceImpl.getInstance().getByMovieID(request.getParameter("id"));
         request.setAttribute("sessionDTOs",sessionDTOs);
-        request.getRequestDispatcher("changeSessions").forward(request,response);
+        request.getRequestDispatcher("changeSessions.jsp").forward(request,response);
     }
 }

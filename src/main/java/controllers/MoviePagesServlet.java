@@ -24,6 +24,6 @@ public class MoviePagesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<MovieDTO> movieDTOList = MovieServiceImpl.getInstance().getAll();
         request.setAttribute("movieDTOList",movieDTOList);
-        request.getRequestDispatcher("Pages/common/moviesPage").forward(request,response);
+        request.getRequestDispatcher("moviesPage.jsp").forward(request,response);
     }
 }

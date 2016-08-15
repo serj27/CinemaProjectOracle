@@ -37,6 +37,6 @@ public class ThxForBuyTicketsServlet extends HttpServlet {
                         Integer.parseInt(matcher.group(2)), false));
             }
         }
-        request.getRequestDispatcher("/Pages/common/homePage").forward(request,response);
+        request.getRequestDispatcher("homePage.jsp").forward(request,response);
     }
 }

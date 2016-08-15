@@ -23,6 +23,6 @@ public class MovieByIdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MovieDTO movieDTO = MovieServiceImpl.getInstance().getById(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("movieDTO",movieDTO);
-        request.getRequestDispatcher("Pages/common/movie").forward(request,response);
+        request.getRequestDispatcher("movie.jsp").forward(request,response);
     }
 }

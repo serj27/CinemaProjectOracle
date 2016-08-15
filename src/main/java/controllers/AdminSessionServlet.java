@@ -24,6 +24,6 @@ public class AdminSessionServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<MovieDTO> movieDTOList = MovieServiceImpl.getInstance().getAll();
         request.setAttribute("movieDTOList",movieDTOList);
-        request.getRequestDispatcher("adminSession").forward(request,response);
+        request.getRequestDispatcher("adminSession.jsp").forward(request,response);
     }
 }

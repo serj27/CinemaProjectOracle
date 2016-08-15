@@ -22,6 +22,6 @@ public class AdminPagesServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDTO userDTO = (UserDTO) request.getSession().getAttribute("user");
         request.setAttribute("userDTO",userDTO);
-        request.getRequestDispatcher("admin").forward(request,response);
+        request.getRequestDispatcher("admin.jsp").forward(request,response);
     }
 }

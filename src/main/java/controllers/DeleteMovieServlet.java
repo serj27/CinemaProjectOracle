@@ -21,6 +21,6 @@ public class DeleteMovieServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MovieServiceImpl.getInstance().delete(Integer.parseInt(request.getParameter("id")));
-        request.getRequestDispatcher("changeMovie").forward(request,response);
+        request.getRequestDispatcher("deleteMovie.jsp").forward(request,response);
     }
 }

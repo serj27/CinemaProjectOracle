@@ -33,6 +33,6 @@ public class ThxForAddMovieServlet extends HttpServlet {
                 Integer.parseInt(request.getParameter("emonth")), Integer.parseInt(request.getParameter("eday")));
 
         MovieServiceImpl.getInstance().save(new MovieDTO(title,description,duration,rentStart,rentEnd,genre,rating));
-        request.getRequestDispatcher("/Pages/admin/admin").forward(request,response);
+        request.getRequestDispatcher("admin.jsp").forward(request,response);
     }
 }

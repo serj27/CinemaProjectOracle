@@ -28,7 +28,7 @@ public class SessionServlet extends HttpServlet {
         List<RowDTO> rowDTOs = RowServiceImpl.getInstance().getByHallID(request.getParameter("hall_id"));
         request.setAttribute("rowDTOs",rowDTOs);
         request.setAttribute("sessionDTO",sessionDTO);
-        request.getRequestDispatcher("session").forward(request,response);
+        request.getRequestDispatcher("session.jsp").forward(request,response);
     }
 
 }

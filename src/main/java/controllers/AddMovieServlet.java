@@ -19,6 +19,6 @@ public class AddMovieServlet extends HttpServlet{
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("addMovie").forward(request,response);
+        request.getRequestDispatcher("addMovie.jsp").forward(request,response);
     }
 }

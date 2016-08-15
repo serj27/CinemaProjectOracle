@@ -18,6 +18,6 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("Pages/common/registration").forward(request,response);
+        request.getRequestDispatcher("registration.jsp").forward(request,response);
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mappings xmlns="http://dozer.sourceforge.net"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="dozer.sourceforge.net
+         http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+<mapping>
+    <class-a>model.Movie</class-a>
+    <class-b>dto.MovieDTO</class-b>
+</mapping>
+
+    <mapping>
+        <class-a>model.Hall</class-a>
+        <class-b>dto.HallDTO</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>model.Row</class-a>
+        <class-b>dto.RowDTO</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>model.Session</class-a>
+        <class-b>dto.SessionDTO</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>model.Tickets</class-a>
+        <class-b>dto.TicketsDTO</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>model.Users</class-a>
+        <class-b>dto.UserDTO</class-b>
+    </mapping>
+
+
+</mappings>

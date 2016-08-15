@@ -23,6 +23,6 @@ public class UpdateSessionsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SessionDTO sessionDTO = SessionServiceImpl.getInstance().getById(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("sessionDTO",sessionDTO);
-        request.getRequestDispatcher("updateSessions").forward(request,response);
+        request.getRequestDispatcher("updateSessions.jsp").forward(request,response);
     }
 }

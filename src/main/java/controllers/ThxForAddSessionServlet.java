@@ -25,6 +25,6 @@ public class ThxForAddSessionServlet extends HttpServlet {
                 Integer.parseInt(request.getParameter("smonth")), Integer.parseInt(request.getParameter("sday")));
         double price = Integer.parseInt(request.getParameter("price"));
 
-        request.getRequestDispatcher("/Pages/admin/admin").forward(request,response);
+        request.getRequestDispatcher("admin.jsp").forward(request,response);
     }
 }

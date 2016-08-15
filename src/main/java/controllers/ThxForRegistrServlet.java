@@ -31,6 +31,6 @@ public class ThxForRegistrServlet extends HttpServlet {
         LocalDate birthday = LocalDate.of(Integer.parseInt(request.getParameter("year")),
                 Integer.parseInt(request.getParameter("month")), Integer.parseInt(request.getParameter("day")));
         UserServiceImpl.getInstance().save(new UserDTO(login,password,firstName,secondName,email,gender,birthday, UserDTO.Role.USER));
-        request.getRequestDispatcher("/Pages/common/homePage").forward(request,response);
+        request.getRequestDispatcher("homePage.jsp").forward(request,response);
     }
 }
