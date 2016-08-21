@@ -114,15 +114,16 @@ public class Movie extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "Title = " + title + '\'' +
-                ", Description = " + description + '\'' +
-                ", Duration = " + duration +
-                ", Rent Start = " + rentStart +
-                ", Rent End = " + rentEnd +
-                ", Genre = " + genre + '\'' +
-                ", Rating = " + rating +
-                "} " + super.toString();
+        final StringBuilder sb = new StringBuilder("MovieDTO: ");
+        sb.append("id = '").append(getId());
+        sb.append(", title = '").append(title).append("\'");
+        sb.append(", description = '").append(description).append("\'");
+        sb.append(", duration = '").append(duration).append("\'");
+        sb.append(", rentStart = '").append(rentStart).append("\'");
+        sb.append(", rentEnd = '").append(rentEnd).append("\'");
+        sb.append(", rating = '").append(rating).append("\'");
+        sb.append(", genre = '").append(genre).append("\'");
+        return sb.toString();
     }
 }
 

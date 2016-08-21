@@ -91,12 +91,12 @@ public class Tickets extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Tickets {" +
-                "User ID = " + userID +
-                ", Session ID = " + sessionID +
-                ", Row Number = " + rowNumber +
-                ", Seat Number = " + seatNumber +
-                ", Sold = " + isSold +
-                "} " + super.toString();
+        final StringBuilder sb = new StringBuilder("TicketsDTO: ");
+        sb.append("rowNumber = ").append(rowNumber);
+        sb.append(", seatNumber = ").append(seatNumber);
+        sb.append(", user = ").append(userID);
+        sb.append(", session = ").append(sessionID);
+        sb.append(", isSold = ").append(isSold);
+        return sb.toString();
     }
 }

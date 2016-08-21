@@ -43,8 +43,9 @@ public class Hall extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Hall DTO {" +
-                "Hall Name = '" + getHallName() + '\'' +
-                '}' + super.toString();
+        final StringBuilder sb = new StringBuilder("HallDTO: ");
+        sb.append("id = ").append(getId());
+        sb.append(", name = ").append(hallName).append('\'');
+        return sb.toString();
     }
 }

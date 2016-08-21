@@ -132,15 +132,15 @@ public class Users extends Entity<Integer>{
 
     @Override
     public String toString() {
-        return "Users {" +
-                "Login = '" + login + '\'' +
-                ", Password = '" + password + '\'' +
-                ", First Name = '" + firstName + '\'' +
-                ", Second Name = '" + secondName + '\'' +
-                ", Email = '" + email + '\'' +
-                ", Gender = " + gender +
-                ", Birthday = " + birthday +
-                ", Role = " + role +
-                "} " + super.toString();
+        final StringBuilder sb = new StringBuilder("UserDTO: ");
+        sb.append("id = ").append(getId());
+        sb.append(", firstName = '").append(firstName).append("\'");
+        sb.append(", secondName = '").append(secondName).append("\'");
+        sb.append(", login = '").append(login).append("\'");
+        sb.append(", password = '").append(password).append("\'");
+        sb.append(", email = '").append(email).append("\'");
+        sb.append(", gender = '").append(gender).append("\'");
+        sb.append(", role = '").append(role);
+        return sb.toString();
     }
 }

@@ -66,10 +66,10 @@ public class Row extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Row {" +
-                "Row Number = " + rowNumber +
-                ", Amount Seats = " + amountSeats +
-                ", Hall ID = " + hallID +
-                "} " + super.toString();
+        final StringBuilder sb = new StringBuilder("RowDTO: ");
+        sb.append("hall = '").append(hallID).append("\n");
+        sb.append(", rowNumber = '").append(rowNumber);
+        sb.append(", amountSeats").append(amountSeats);
+        return sb.toString();
     }
 }

@@ -1,13 +1,13 @@
 package dao.impl;
 
+import datasource.DataSource;
 import model.Movie;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-import static dao.impl.SQLs.INSERT_MOVIE;
-import static dao.impl.SQLs.UPDATE_MOVIE;
+import static dao.impl.SQLs.*;
 
 /**
  * Created by serj27 on 02.06.2016.
@@ -16,8 +16,14 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
 
     private static MovieDaoImpl crudDAO;
 
-    public MovieDaoImpl(Class<Movie> movieClass) {
-        super(Movie.class);
+    public MovieDaoImpl(Class type) {
+        super(type);
+    }
+
+    public static  synchronized MovieDaoImpl getInstance() {
+        if (crudDAO == null){
+            crudDAO = new MovieDaoImpl(Movie.class);
+        } return  crudDAO;
     }
 
     @Override
@@ -27,10 +33,10 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
         preparedStatement.setString(2, entity.getDescription());
         preparedStatement.setInt(3, entity.getDuration());
         preparedStatement.setDate(4, Date.valueOf(entity.getRentStart()));
-        preparedStatement.setDate(4, Date.valueOf(entity.getRentEnd()));
-        preparedStatement.setString(5, entity.getGenre());
-        preparedStatement.setInt(6, entity.getRating());
-        preparedStatement.setInt(7, entity.getId());
+        preparedStatement.setDate(5, Date.valueOf(entity.getRentEnd()));
+        preparedStatement.setString(6, entity.getGenre());
+        preparedStatement.setInt(7, entity.getRating());
+        preparedStatement.setInt(8, entity.getId());
         return preparedStatement;
     }
 
@@ -65,6 +71,34 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
             result.add(movie);
         }
         return result;
+    }
+
+    public List<Movie> getMovieByTitle (String title){
+        Connection connection = DataSource.getInstance().getConnection();
+        List<Movie> movieList = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_MOVIE_BY_TITLE);
+            preparedStatement.setString(1,"%" + title + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            movieList = readAll(resultSet);
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return movieList;
+    }
+
+    public void updateMovieTitle (String title, Integer id){
+        Connection connection = DataSource.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_MOVIE_TITLE);
+            preparedStatement.setString(1, title);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1,22 +1,31 @@
 package dao.impl;
 
+import datasource.DataSource;
 import model.Hall;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+import static dao.impl.SQLs.GET_HALL_BY_NAME;
 import static dao.impl.SQLs.INSERT_HALL;
 import static dao.impl.SQLs.UPDATE_HALL;
-
 /**
  * Created by serj27 on 17.07.2016.
  */
-public class HallDaoImpl extends CrudDAO<Hall>{
+public final class HallDaoImpl extends CrudDAO<Hall>{
+
 
     private static HallDaoImpl crudDAO;
 
-    public HallDaoImpl(Class<Hall> hallClass){super(Hall.class);}
+    public HallDaoImpl(Class type){super(type);}
+
+    private static synchronized HallDaoImpl getInstance(){
+        if (crudDAO == null) {
+            crudDAO = new HallDaoImpl(Hall.class);
+        }
+        return crudDAO;
+    }
 
     @Override
     protected PreparedStatement createUpdateStatement(Connection connection, Hall entity) throws SQLException {
@@ -44,6 +53,22 @@ public class HallDaoImpl extends CrudDAO<Hall>{
             hallList.add(hall);
         }
         return hallList;
+
+    }
+
+    public Hall getHallByName (String name){
+        Connection connection = DataSource.getInstance().getConnection();
+        List<Hall> hallList = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_HALL_BY_NAME);
+            preparedStatement.setString(1,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            hallList = readAll(resultSet);
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hallList.get(0);
     }
 
 

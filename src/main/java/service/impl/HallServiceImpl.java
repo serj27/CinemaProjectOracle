@@ -39,7 +39,7 @@ public class HallServiceImpl implements Service<Integer, HallDTO> {
     public HallDTO getById(Integer id) {
         Hall hall = hallDao.findOne(id);
         HallDTO hallDTO = BeanMapper.singleMapper(hall, HallDTO.class);
-        return null;
+        return hallDTO;
     }
 
     @Override

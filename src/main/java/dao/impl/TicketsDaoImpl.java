@@ -1,23 +1,29 @@
 package dao.impl;
 
+import datasource.DataSource;
 import model.Tickets;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-import static dao.impl.SQLs.INSERT_TICKETS;
-import static dao.impl.SQLs.UPDATE_TICKETS;
+import static dao.impl.SQLs.*;
 
 /**
  * Created by serj27 on 17.07.2016.
  */
 public class TicketsDaoImpl extends CrudDAO<Tickets> {
 
-    private static MovieDaoImpl crudDAO;
+    private static TicketsDaoImpl crudDAO;
 
-    public TicketsDaoImpl(Class<Tickets> ticketsClass) {
-        super(Tickets.class);
+    public TicketsDaoImpl(Class type) {
+        super(type);
+    }
+
+    public static synchronized TicketsDaoImpl getInstance() {
+        if (crudDAO == null){
+            crudDAO = new TicketsDaoImpl(Tickets.class);
+        }return crudDAO;
     }
 
     @Override
@@ -56,6 +62,77 @@ public class TicketsDaoImpl extends CrudDAO<Tickets> {
             tickets.setSeatNumber(resultSet.getInt("seat_number"));
             tickets.setSold(resultSet.getBoolean("is_sold"));
             ticketsList.add(tickets);
+        }
+        return ticketsList;
+    }
+
+     public void updateTicketRowNumber (int rowNumber, Integer id){
+         Connection connection = DataSource.getInstance().getConnection();
+         try {
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_TICKET_ROW_NUMBER);
+             preparedStatement.setInt(1,rowNumber);
+             preparedStatement.setInt(2,id);
+             preparedStatement.executeUpdate();
+             connection.close();
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
+     }
+
+    public void updateTicketSeatNumber (int seatNumber, Integer id){
+        Connection connection = DataSource.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_TICKET_SEAT_NUMBER);
+            preparedStatement.setInt(1,seatNumber);
+            preparedStatement.setInt(2,id);
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Tickets> getTicketBySession (Integer session_id){
+        Connection connection = DataSource.getInstance().getConnection();
+        List<Tickets> ticketsList = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_TICKET_BY_SESSION_ID);
+            preparedStatement.setInt(1,session_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ticketsList = readAll(resultSet);
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+          return ticketsList;
+    }
+
+    public List<Tickets> getTicketByUser (Integer id){
+        Connection connection = DataSource.getInstance().getConnection();
+        List<Tickets> ticketsList = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_TICKET_BY_USER_ID);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ticketsList = readAll(resultSet);
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ticketsList;
+    }
+
+    public List<Tickets> getTicketByIsSold (boolean isSold){
+        Connection connection = DataSource.getInstance().getConnection();
+        List<Tickets> ticketsList = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_TICKET_BY_IS_SOLD);
+            preparedStatement.setBoolean(1,isSold);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ticketsList = readAll(resultSet);
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return ticketsList;
     }

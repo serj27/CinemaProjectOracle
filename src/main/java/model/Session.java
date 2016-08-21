@@ -83,11 +83,12 @@ public class Session extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Session {" +
-                "Movie ID = " + movieID +
-                ", Hall ID = " + hallID +
-                ", Price = " + price +
-                ", Start Session = " + startSession +
-                "} " + super.toString();
+        final StringBuilder sb = new StringBuilder("SessionDTO: ");
+        sb.append("id = ").append(getId());
+        sb.append(", hall = ").append(hallID).append("\n");
+        sb.append(", movie = ").append(movieID).append("\n");
+        sb.append(", startSession = ").append(startSession);
+        sb.append(", price").append(price);
+        return sb.toString();
     }
 }
